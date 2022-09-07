@@ -59,7 +59,7 @@ public class BillController {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(account.getUserName(),account.getPassWord()));
         }catch (Exception e){
-//            throw new Exception("invalid username/password");
+            throw new Exception("invalid username/password");
         }
         return jwtUtil.generateToken(account.getUserName());
     }
